@@ -1,0 +1,268 @@
+@import "src/assets/styles/_colors.scss";
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .header-container {
+    padding: 10px;
+    max-width: 1250px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s all;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: default;
+      transition: 0.3s all;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    nav {
+      padding: 0;
+      margin: 0;
+
+      ul {
+        list-style: none;
+        display: flex;
+        column-gap: 30px;
+
+        li {
+          position: relative;
+
+          a {
+            text-decoration: none;
+            font-size: 18px;
+            color: $fontColor;
+            position: relative;
+            transition: 0.3s all;// Добавим относительное позиционирование
+
+            &::before,
+            &::after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 1px;
+              bottom: -1px;
+              left: 0;
+              background-color: $fontColor; // Цвет линии
+              visibility: hidden;
+              transform: scaleX(0);
+              transition: all 0.3s ease-in-out;
+            }
+
+            &::before {
+              transform-origin: right;
+            }
+
+            &::after {
+              transform-origin: left;
+            }
+
+            &:hover::before,
+            &:hover::after {
+              visibility: visible;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header.fixed {
+  position: fixed;
+  z-index: 1000; // Ensure it appears above other elements
+}
+
+@media (max-width: 1230px) {
+  header {
+    .header-container {
+      padding: 10px 30px;
+
+      .logo {
+        img {
+          max-width: 8rem;
+          margin-right: 15px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  header {
+    .header-container {
+      padding: 10px 30px;
+
+      nav {
+        ul {
+          li {
+            a {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    .header-container {
+      .logo {
+        visibility: hidden;
+      }
+
+      nav {
+        display: none;
+        order: 3; // Move the nav to the bottom
+      }
+
+      .burger-menu {
+        order: 2;
+
+        // Styles for the burger icon
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+
+        .bar {
+          height: 3px;
+          width: 100%;
+          background-color: $fontColor; // Customize the color
+          margin: 5px 0;
+        }
+
+        &.open {
+          .bar {
+            &:nth-child(1) {
+              transform: rotate(-45deg) translate(-5px, 6px);
+              transition: 0.3s all;
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+              transition: 0.3s all;
+            }
+
+            &:nth-child(3) {
+              transform: rotate(45deg) translate(-5px, -6px);
+              transition: 0.3s all;
+            }
+          }
+        }
+      }
+
+      nav {
+        &.open {
+          position: fixed;
+          height: 100vh;
+          width: 100%;
+          top: 0; // Center vertically
+          left: 0; // Center horizontally
+          display: flex;
+          background-color: $mainBackground;
+
+          ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            flex-direction: column;
+            align-items: start;
+
+            li {
+              text-align: center;
+              margin-bottom: 20px;
+
+
+              a {
+                font-size: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    .header-container {
+      .logo {
+        img {
+          max-width: 4rem;
+          margin-right: 10px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      nav {
+        &.open {
+          ul {
+            padding: 0;
+            li {
+              text-align: center;
+              margin-bottom: 40px;
+              transition: 0.3s all;
+
+              a {
+                font-size: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 350px) {
+  header {
+    .header-container {
+      .logo {
+        img {
+          max-width: 3rem;
+          margin-right: 10px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+      nav {
+        &.open {
+          ul {
+
+            li {
+              text-align: center;
+              margin-bottom: 25px;
+
+              a {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

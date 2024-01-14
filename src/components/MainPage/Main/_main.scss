@@ -1,0 +1,50 @@
+.greetings{
+  max-width: 1230px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  .title{
+    font-family: 'Donpoligrafbum', sans-serif;
+    font-size: 100px;
+    span{
+      color: #84FF89
+    }
+  }
+}
+
+@media (max-width: 1400px){
+  .greetings{
+    .title{
+      font-size: 80px;
+      padding: 0 30px;
+    }
+  }
+}
+
+@media (max-width: 1230px){
+  .greetings{
+    .title{
+      font-size: 50px;
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .greetings{
+    .title{
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .greetings{
+    .title{
+      font-size: 25px;
+    }
+  }
+}

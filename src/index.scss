@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Donpoligrafbum';
+    src: url('./assets/fonts/Donpoligrafbum-Bold.woff') format('woff2'),
+    url('./assets/fonts/Donpoligrafbum-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-ExtraBold.woff') format('woff2'),
+    url('./assets/fonts/Raleway-ExtraBold.woff') format('woff');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Bold.woff') format('woff2'),
+    url('./assets/fonts/Raleway-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-SemiBold.woff') format('woff2'),
+    url('./assets/fonts/Raleway-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Medium.woff') format('woff2'),
+    url('./assets/fonts/Raleway-Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Regular.woff') format('woff2'),
+    url('./assets/fonts/Raleway-Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Light.woff') format('woff2'),
+    url('./assets/fonts/Raleway-Light.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-ExtraLight.woff') format('woff2'),
+    url('./assets/fonts/Raleway-ExtraLight.woff') format('woff');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Thin.woff') format('woff2'),
+    url('./assets/fonts/Raleway-Thin.woff') format('woff');
+    font-weight: 100;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
