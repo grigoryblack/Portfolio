@@ -1,0 +1,66 @@
+@import "src/assets/styles/_colors.scss";
+
+$marqueeDuration: 7s;
+.wrap {
+  width: 100%;
+  margin: auto;
+}
+
+.items-wrap {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 20px;
+}
+
+.items {
+  flex-shrink: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  min-width: 100%;
+}
+
+.item {
+  font-family: 'Donpoligrafbum', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 10px 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.black {
+  color: $secondColor;
+}
+
+.green {
+  color: $fontColor;
+}
+
+.marquee {
+  animation: scroll $marqueeDuration linear infinite;
+}
+
+.items-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+@media (max-width: 600px){
+  .item{
+    font-size: 25px;
+  }
+}

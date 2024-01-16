@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './_main.scss';
 import Plx from 'react-plx';
 
@@ -40,9 +40,9 @@ const Main = () => {
             end: 500,
             properties: [
                 {
-                    startValue: 1,
-                    endValue: 2,
-                    property: "scale",
+                    startValue: 0,
+                    endValue: -500, // Adjust this value based on your needs
+                    property: "translateX",
                 },
             ],
         },
@@ -50,11 +50,13 @@ const Main = () => {
 
     return (
         <section id="main" className="greetings">
-            <Plx parallaxData={parallaxData}>
-                <div className="title">
-                    HI, my name <br /> is <span>Grigory</span> <br /> I am a <br/> <span>{currentWord}</span>
-                </div>
-            </Plx>
+            <div className="greeting-container">
+                <Plx parallaxData={parallaxData}>
+                    <div className="title">
+                        HI, my name <br /> is <span>Grigory</span> <br /> I am a <br/> <span>{currentWord}</span>
+                    </div>
+                </Plx>
+            </div>
         </section>
     );
 };
