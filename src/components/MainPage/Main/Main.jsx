@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import './_main.scss';
 import Plx from 'react-plx';
+import './_main.scss';
 
 const Main = () => {
     const [wordIndex, setWordIndex] = useState(0);

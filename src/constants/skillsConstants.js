@@ -1,7 +1,7 @@
 export const SKILLS = [
     {name: "Language №1", description: ["Russian"], rating: 5},
     {name: "Language №2", description: ["English"], rating: 4},
-    {name: "React", description: ["Classes", "Hooks", "Next.js", "Context", "JSX"], rating: 4},
+    {name: "React", description: ["Classes", "Hooks", "Next.js", "Context", "JSX"], rating: 5},
     {
         name: "Design",
         description: ["Figma", "PH", "Material-UI", "CSS", "SCSS", "Readability", "Usability", "Adaptivity"],

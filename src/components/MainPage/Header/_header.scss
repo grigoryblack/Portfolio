@@ -77,11 +77,6 @@ header {
       }
     }
   }
-
-  &:hover{
-    background-color: rgba(92,254,108, 0.1);
-    transition: 0.8s all;
-  }
 }
 
 header.fixed {
@@ -176,7 +171,7 @@ header.fixed {
       nav {
         &.open {
           position: fixed;
-          height: 100vh;
+          height: 100%;
           width: 100%;
           top: 0; // Center vertically
           left: 0; // Center horizontally
