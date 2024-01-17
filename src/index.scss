@@ -60,6 +60,8 @@
     font-weight: 100;
 }
 
+@import 'src/assets/styles/colors';
+
 * {
     margin: 0;
     padding: 0;
@@ -77,4 +79,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $fontSecondColor;
+    border-radius: 5px;
+
 }

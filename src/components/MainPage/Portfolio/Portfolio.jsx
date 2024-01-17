@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import Plx from 'react-plx';
 import CableWalker from '/src/assets/img/CableWalker.png'
 import CableWalkerCRM from '/src/assets/img/Cablewalker CRM.png'
@@ -10,6 +11,12 @@ import './_portfolio.scss';
 
 const Portfolio = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const navigate = useNavigate();
+
+    const handlePlxClick = (route) => {
+        // Redirect to the specified route when Plx is clicked
+        navigate(route);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -66,7 +73,7 @@ const Portfolio = () => {
             <div className="portfolio-container">
                 <div className="title">Experience <span>3.5 years</span></div>
                 <div className="subtitle">Commercial</div>
-                <Plx parallaxData={parallaxData1}>
+                <Plx parallaxData={parallaxData1} onClick={() => handlePlxClick('/CableWalker')}>
                     <div className="portfolio-item">
                         <img className="zip-texture" src={zip1} alt="зип"/>
                         <div className="item-tile"><span> №1 </span>CableWalker</div>
@@ -77,7 +84,7 @@ const Portfolio = () => {
                         <img className="item-photo" src={CableWalker} alt=""/>
                     </div>
                 </Plx>
-                <Plx parallaxData={parallaxData2}>
+                <Plx parallaxData={parallaxData2} onClick={() => handlePlxClick('/CableWalkerCRM')}>
                     <div className="portfolio-item" style={{marginRight: 0, marginLeft: 'auto'}}>
                         <img className="zip-texture-2" src={zip2} alt="зип"/>
                         <div className="item-tile"><span> №2 </span>CableWalker CRM system</div>
@@ -89,10 +96,10 @@ const Portfolio = () => {
                     </div>
                 </Plx>
                 <div className="subtitle">Freelance</div>
-                <Plx parallaxData={parallaxData1}>
+                    <Plx parallaxData={parallaxData1} onClick={() => handlePlxClick('/Olimp')}>
                     <div className="portfolio-item">
                         <img className="zip-texture" src={zip1} alt="зип"/>
-                        <div className="item-tile"><span> №3 </span>CC «OLIMP»</div>
+                        <div className="item-tile"><span> №3 </span>CC «OLYMP»</div>
                         <div className="item-description">
                             Construction company engaged in the construction of
                             country houses and the selection of sites. Created landing. power
@@ -101,7 +108,7 @@ const Portfolio = () => {
                         <img className="item-photo" src={Olimp} alt=""/>
                     </div>
                 </Plx>
-                <Plx parallaxData={parallaxData2}>
+                <Plx parallaxData={parallaxData2}  onClick={() => handlePlxClick('/Kampus')}>
                     <div className="portfolio-item" style={{marginRight: 0, marginLeft: 'auto'}}>
                         <img className="zip-texture-2" src={zip2} alt="зип"/>
                         <div className="item-tile"><span> №4 </span>Kampus</div>

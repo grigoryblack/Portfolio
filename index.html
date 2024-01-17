@@ -1,14 +1,78 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" integrity="sha512-vnmn/Qqn6aG0POAc9mIGzjq0IybrvxJXYDafNvp9JSnDGxeF3pbkSqLvf+YGd5ku63pT7sa/jxHn7/d0mU8+tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/Logo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script type="text/javascript">
+        (function(l) {
+            if (l.search[1] === '/' ) {
+                var decoded = l.search.slice(1).split('&').map(function(s) {
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location))
+    </script>
+
+    <style>
+        .lds-ripple-wrapper{
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #6DACA2;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            position: relative;
+            width:  48px;
+            height: 48px;
+            background: #79D87C;
+            transform: rotateX(65deg) rotate(45deg);
+        // remove bellows command for perspective change
+        //transform: perspective(200px) rotateX(65deg) rotate(45deg);
+            color: #fff;
+            animation: layers1 1s linear infinite alternate;
+        }
+        .loader:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.7);
+            animation: layerTr 1s linear infinite alternate;
+        }
+
+        @keyframes layers1 {
+            0% { box-shadow: 0px 0px 0 0px  }
+            90% , 100% { box-shadow: 20px 20px 0 -4px  }
+        }
+        @keyframes layerTr {
+            0% { transform:  translate(0, 0) scale(1) }
+            100% {  transform: translate(-25px, -25px) scale(1) }
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"
+            integrity="sha512-vnmn/Qqn6aG0POAc9mIGzjq0IybrvxJXYDafNvp9JSnDGxeF3pbkSqLvf+YGd5ku63pT7sa/jxHn7/d0mU8+tA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Grigory Druzhenkov</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+</head>
+<body>
+<div id="root">
+    <div class="lds-ripple-wrapper">
+        <span class="loader"></span>
+    </div>
+</div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
