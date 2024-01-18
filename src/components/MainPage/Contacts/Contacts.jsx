@@ -1,22 +1,29 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ProgressiveImage from "../ProgressiveImage/index.js";
 import vk from '/src/assets/img/vk.svg';
 import telegram from '/src/assets/img/telegram.svg';
 import git from '/src/assets/img/git.svg';
 import phoneImage from '/src/assets/img/phone.png';
 import emailImage from '/src/assets/img/email.png';
+import phoneImageLow from '/src/assets/img/phonelow.png';
+import emailImageLow from '/src/assets/img/emaillow.png';
 import './_contacts.scss';
+
 
 const Contacts = () => {
     const [notification, setNotification] = useState(null);
 
-    const handleCopyToClipboard = (text, imgSrc) => {
+    const handleCopyToClipboard = (text, imgSrc, imgSrcLow) => {
         navigator.clipboard.writeText(text)
             .then(() => {
-                setNotification({ text, imgSrc });
+                setNotification({ text, imgSrc, imgSrcLow });
                 console.log(`${text} copied`);
-                setTimeout(() => setNotification(null), 1500);
             });
+    };
+
+    const handleImageLoad = () => {
+        setTimeout(() => setNotification(null), 1500);
     };
 
     const handleCallPhone = () => {
@@ -35,7 +42,7 @@ const Contacts = () => {
                         exit={{ x: '100%' }}
                         transition={{ ease: 'easeInOut', duration: 0.3 }}
                     >
-                        <img src={notification.imgSrc} alt="" loading="lazy" />
+                        <ProgressiveImage onLoad={handleImageLoad} className={''} src={notification.imgSrc} width={'100%'} placeholderSrc={notification.imgSrcLow}/>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -48,9 +55,9 @@ const Contacts = () => {
                 <div className="contacts-items">
                     <div className="contacts-item">
                         <div className="item" onClick={handleCallPhone}>Phone:
-                            <span className="gradient-hover" onClick={() => handleCopyToClipboard('+79127864139', phoneImage)}> +79127864139</span>
+                            <span className="gradient-hover" onClick={() => handleCopyToClipboard('+79127864139', phoneImage,phoneImageLow )}> +79127864139</span>
                         </div>
-                        <div className="item" onClick={() => handleCopyToClipboard('drz2002@yandex.ru', emailImage)}>E-mail:
+                        <div className="item" onClick={() => handleCopyToClipboard('drz2002@yandex.ru', emailImage, emailImageLow )}>E-mail:
                             <span className="gradient-hover"> drz2002@yandex.ru</span>
                         </div>
                     </div>

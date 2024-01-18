@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import ProgressiveImage from "../../components/MainPage/ProgressiveImage/index.js";
 import './_portfolio-page.scss';
 
-const PortfolioPage = ({ title, subtitle, image, link, description }) => {
+
+const PortfolioPage = ({ title, subtitle, image, link, description, imageLow }) => {
     const textVariants = {
         hidden: { opacity: 0, x: -100 },
         visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.5 } },
@@ -40,14 +42,7 @@ const PortfolioPage = ({ title, subtitle, image, link, description }) => {
                             </a>
                         )}
                     </motion.div>
-                    <motion.img
-                        src={image}
-                        alt=""
-                        className="image-container"
-                        variants={imageVariants}
-                        initial="hidden"
-                        animate="visible"
-                    />
+                    <ProgressiveImage className={'image-container'} src={image} placeholderSrc={imageLow}/>
                 </div>
             </div>
         </div>

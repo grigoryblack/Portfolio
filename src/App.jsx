@@ -7,6 +7,10 @@ import CableWalker from '/src/assets/img/CableWalkerMocup.png';
 import CableWalkerCrm from '/src/assets/img/CrmMockup.png';
 import Olimp from '/src/assets/img/OlimpMockup.png';
 import Kampus from '/src/assets/img/KapusMockup.png';
+import CableWalkerLow from '/src/assets/img/CableWalkerMocuplow.png';
+import CableWalkerCrmLow from '/src/assets/img/CrmMockuplow.png';
+import OlimpLow from '/src/assets/img/OlimpMockuplow.png';
+import KampusLow from '/src/assets/img/KapusMockuplow.png';
 import './App.css'
 
 
@@ -33,26 +37,30 @@ function App() {
                 <Route path="/CableWalker" element={<PortfolioPage title="CableWalker"
                                                                    link="https://cablewalker.com/"
                                                                    image={CableWalker}
+                                                                   imageLow={CableWalkerLow}
                                                                    description="We create innovative solutions for diagnostics and maintenance of power lines."
                                                                    subtitle="An innovative digital robotic device for monitoring and maintaining power lines in real time, improving the efficiency of power grids."/>
                 }/>
                 <Route path="/CableWalkerCrm" element={<PortfolioPage title="CableWalker CRM system"
-                                                                   link={null}
-                                                                   image={CableWalkerCrm}
-                                                                   description={null}
-                                                                   subtitle="System for tracking project readiness, the state of power line spans and an employee’s personal account."/>
+                                                                      link={null}
+                                                                      image={CableWalkerCrm}
+                                                                      imageLow={CableWalkerCrmLow}
+                                                                      description={null}
+                                                                      subtitle="System for tracking project readiness, the state of power line spans and an employee’s personal account."/>
                 }/>
                 <Route path="/Olimp" element={<PortfolioPage title="CC «OLYMP»"
-                                                                   link={null}
-                                                                   image={Olimp}
-                                                                   description={null}
-                                                                   subtitle="Construction company engaged in the construction of country houses and the selection of sites. Created landing."/>
+                                                             link={null}
+                                                             imageLow={OlimpLow}
+                                                             image={Olimp}
+                                                             description={null}
+                                                             subtitle="Construction company engaged in the construction of country houses and the selection of sites. Created landing."/>
                 }/>
                 <Route path="/Kampus" element={<PortfolioPage title="Kampus"
-                                                                   link={null}
-                                                                   image={Kampus}
-                                                                   description={null}
-                                                                   subtitle="A project that helps students develop, a personal account of trustees has been created to track statistics."/>
+                                                              link={null}
+                                                              imageLow={KampusLow}
+                                                              image={Kampus}
+                                                              description={null}
+                                                              subtitle="A project that helps students develop, a personal account of trustees has been created to track statistics."/>
                 }/>
             </Routes>
         </div>

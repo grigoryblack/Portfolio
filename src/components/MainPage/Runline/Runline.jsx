@@ -2,7 +2,7 @@
 import './_runline.scss';
 
 const wordsArray = [
-    'React.js', 'jsx', 'JS', 'SCSS', 'Vite', 'Electron', 'Git', 'Kotlin', 'Node.js', 'Express.js', 'MongoDB', 'SQL'
+    'React.js', 'jsx', 'JS', 'SCSS', 'Vite', 'Electron', 'Git', 'Kotlin', 'Node.js', 'Express.js', 'MongoDB', 'SQL /'
 ];
 
 const Runline = () => {
